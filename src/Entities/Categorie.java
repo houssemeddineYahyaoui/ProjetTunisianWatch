@@ -8,6 +8,9 @@ package Entities;
  *
  * @author A500
  */
-public class NewClass {
-    
+public enum Categorie {
+     etatique,semiEtatique,prive;
+ 
+
+   
 }
