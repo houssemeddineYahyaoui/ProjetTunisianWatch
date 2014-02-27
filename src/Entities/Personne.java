@@ -4,40 +4,36 @@
  */
 package Entities;
 
-/**
- *
- * @author A500
- */
-  
-public abstract class Personne {
-   private String login;
-    private String passe;
-    private String email;
-    private String question;
-     private String pwd;
+public class Personne {
+    private String login;
+    private String securite;
+    private String pwd;
     private int cin;
     private String nom;
     private String prenom;
     private int age;
-     private int telephone;
+    private String email;
+    private int telephone;
+     private String question;
+     private int verification;
 
-    public Personne(String login, String passe, String email, String question, String pwd, int cin, String nom, String prenom, int age, int telephone) {
-        this.login = login;
-        this.passe = passe;
-        this.email = email;
-        this.question = question;
-        this.pwd = pwd;
-        this.cin = cin;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.age = age;
-        this.telephone = telephone;
+    public int getVerification() {
+        return verification;
     }
 
+    public void setVerification(int verification) {
+        this.verification = verification;
+    }
     public String getPwd() {
         return pwd;
     }
+public String getSecurite() {
+        return securite;
+    }
 
+    public void setSecurite(String securite) {
+        this.securite = securite;
+    }
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
@@ -81,8 +77,8 @@ public abstract class Personne {
     public void setTelephone(int telephone) {
         this.telephone = telephone;
     }
-  
-     
+
+ 
     public String getQuestion() {
         return question;
     }
@@ -107,18 +103,11 @@ public abstract class Personne {
         this.login = login;
     }
 
-    public String getPasse() {
-        return passe;
-    }
-
-    public void setPasse(String passe) {
-        this.passe = passe;
-    }
+   
 
     @Override
     public String toString() {
         return "Personne{" + "cin=" + cin + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", email=" + email + ", telephone=" + telephone + '}';
     }
-   
     
 }
