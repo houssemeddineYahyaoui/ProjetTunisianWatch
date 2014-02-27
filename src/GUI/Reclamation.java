@@ -173,6 +173,7 @@ DAO A=new DAO();
     }
         interface_user m=new interface_user(log, securitee, amail, question, pd, cn, nomn, preno, agee, telephone);
         m.setVisible(true);
+                dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
