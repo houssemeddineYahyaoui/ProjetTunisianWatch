@@ -14,9 +14,9 @@ public class Responsable extends Personne {
    private  String grade;
    
    
- public Responsable(String domaineTravail, String adresse, String grade, String login, String pwd, int cin, String nom, String prenom, int age, String email, int telephone) {
-        super(login, pwd, cin, nom, prenom, age, email, telephone);
-        this.domaineTravail = domaineTravail;
+ public Responsable(String domaineTravail, String adresse, String grade, String login, String passe, String email, String question, String pwd, int cin, String nom, String prenom, int age, int telephone) {
+super(login, pwd, question, email, pwd, cin, nom, prenom, age, telephone);
+     this.domaineTravail = domaineTravail;
         this.adresse = adresse;
         this.grade = grade;
     }

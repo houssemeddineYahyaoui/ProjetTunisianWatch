@@ -8,42 +8,30 @@ package Entities;
  *
  * @author A500
  */
+  
 public abstract class Personne {
-    protected String login;
-    protected String pwd;
-    protected int cin;
-    protected String nom;
-    protected String prenom;
-    protected int age;
-    protected String email;
-    protected int telephone;
-     
-      public Personne() {
-    }
-     
-     
-  public  Personne(String login,String pwd){   
-       this.login=login;
-       this.pwd=pwd;
-   }
+   private String login;
+    private String passe;
+    private String email;
+    private String question;
+     private String pwd;
+    private int cin;
+    private String nom;
+    private String prenom;
+    private int age;
+     private int telephone;
 
-    public Personne(String login, String pwd, int cin, String nom, String prenom, int age, String email, int telephone) {
+    public Personne(String login, String passe, String email, String question, String pwd, int cin, String nom, String prenom, int age, int telephone) {
         this.login = login;
+        this.passe = passe;
+        this.email = email;
+        this.question = question;
         this.pwd = pwd;
         this.cin = cin;
         this.nom = nom;
         this.prenom = prenom;
         this.age = age;
-        this.email = email;
         this.telephone = telephone;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getPwd() {
@@ -86,6 +74,23 @@ public abstract class Personne {
         this.age = age;
     }
 
+    public int getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(int telephone) {
+        this.telephone = telephone;
+    }
+  
+     
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -94,12 +99,20 @@ public abstract class Personne {
         this.email = email;
     }
 
-    public int getTelephone() {
-        return telephone;
+    public String getLogin() {
+        return login;
     }
 
-    public void setTelephone(int telephone) {
-        this.telephone = telephone;
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPasse() {
+        return passe;
+    }
+
+    public void setPasse(String passe) {
+        this.passe = passe;
     }
 
     @Override
