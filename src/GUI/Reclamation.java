@@ -165,8 +165,7 @@ DAO A=new DAO();
     String categorie=Categ.getSelectedItem().toString();
     String domaine=jComboBox2.getSelectedItem().toString();
     String Etat="Non traiter";
-   JOptionPane.showMessageDialog(null, suj+" "+categorie+" "+domaine);
-
+ 
     if(A.insertReclamation(suj,categorie,domaine,Etat,cn))
     {
     JOptionPane.showMessageDialog(null, "Ajout effectuée avec succès");

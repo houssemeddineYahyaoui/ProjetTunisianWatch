@@ -4,7 +4,7 @@
  */
 package DAO;
 
-import Entities.Personne;
+import Entities.Citoyen;
 import Util.MyConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,31 +19,31 @@ import javax.swing.JOptionPane;
  * @author Doct
  */
 public class DAO {
-  public  boolean test(String a)
+  public boolean test(String a)
         {    
        
         return  findBylogin(a);
         
         }
-   public boolean testMail(String a,int b)
+  public  boolean testMail(String a,int b)
         {    
-        Personne ok;
+        Citoyen ok;
         ok= findByMail(a,b);
         if(a.equals(ok.getEmail()))
            return true;
         return false;
         }
- public   String test(String a,int b)
+  public  String test(String a,int b)
         {    
-        Personne ok;
+        Citoyen ok;
         ok= findByMail(a,b);
         if(a.equals(ok.getEmail()))
            return(ok.getQuestion());
         return null;
         }
-  public  boolean test(String a,String b,int c)
+   public boolean test(String a,String b,int c)
         {    
-        Personne ok;
+        Citoyen ok;
         ok= findByData(a,b,c);
         if(c==1 & ok.getVerification()==0){ JOptionPane.showMessageDialog(null, "Compte veroulle ou en cours de validation");  }
           return a.equals(ok.getLogin())&& b.equals(ok.getPwd()) && ok.getVerification()==1;       
@@ -77,12 +77,12 @@ public class DAO {
         String requete = "select categ  from categorie";
         try {
            Statement statement = MyConnection.getInstance()
-           .createStatement();
-           ResultSet resultat = statement.executeQuery(requete);
+                   .createStatement();
+            ResultSet resultat = statement.executeQuery(requete);
         try {
             while(resultat.next())
             {
-            listedepots.add(resultat.getString(1));
+                listedepots.add(resultat.getString(1));
             }
             } catch (SQLException ex) {
            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -143,8 +143,8 @@ public class DAO {
               JOptionPane.showMessageDialog(null, "erreur lors de l'insertion "+ex.getMessage());
         }
     }
-     public Personne findByData(String login,String pwd,int a){
-     Personne p = new Personne();
+     public Citoyen findByData(String login,String pwd,int a){
+     Citoyen p = new Citoyen();
      PreparedStatement ps;
      String requete="";
      if(a==1){ requete = "select login,pwd,verification from citoyens where login=?  and pwd=? ";}
@@ -176,8 +176,8 @@ public class DAO {
         }
     }
      
-  public Personne findByMail(String email,int a){
-     Personne p = new Personne();
+  public Citoyen findByMail(String email,int a){
+     Citoyen p = new Citoyen();
      PreparedStatement ps;
      String  requete = "";
   
@@ -209,8 +209,8 @@ public class DAO {
             return null;
         }
     }
-   public Personne finduser(String login,String pwd){
-     Personne p = new Personne();
+   public Citoyen finduser(String login,String pwd){
+     Citoyen p = new Citoyen();
      PreparedStatement ps;
      String 
      requete = "select * from citoyens where login=?  and pwd=? ";
@@ -359,7 +359,7 @@ public class DAO {
         }
      }
 
-    public boolean insertReclamation(String suj, String categorie, String domaine, String Etat, int cin) {
+  public  boolean insertReclamation(String suj, String categorie, String domaine, String Etat, int cin) {
         String requete = "insert into reclamation(Type,Domaine,Categories,etat_Rec,Cin_citoyen) values (?,?,?,?,?)";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);

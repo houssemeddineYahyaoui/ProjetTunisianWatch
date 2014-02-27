@@ -7,7 +7,7 @@
 package GUI;
 
 import DAO.DAO;
-import Entities.Personne;
+import Entities.Citoyen;
 import javax.swing.JOptionPane;
 
 /**
@@ -226,7 +226,7 @@ public class interface_cit_res extends javax.swing.JFrame {
      DAO A=new DAO();  
      
     if(A.test(login.getText(),pwd.getText(),1)){
-     Personne b=A.finduser(login.getText(),pwd.getText());  
+     Citoyen b=A.finduser(login.getText(),pwd.getText());  
     interface_user m=new interface_user(b.getLogin(),b.getSecurite(),b.getEmail(),b.getQuestion(),b.getPwd(),b.getCin(),b.getNom(),b.getPrenom(),b.getAge(),b.getTelephone());
     m.setVisible(true);
     dispose();

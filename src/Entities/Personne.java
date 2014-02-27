@@ -6,7 +6,6 @@ package Entities;
 
 public class Personne {
     private String login;
-    private String securite;
     private String pwd;
     private int cin;
     private String nom;
@@ -14,8 +13,10 @@ public class Personne {
     private int age;
     private String email;
     private int telephone;
-     private String question;
      private int verification;
+
+    public Personne() {
+    }
 
     public int getVerification() {
         return verification;
@@ -27,13 +28,7 @@ public class Personne {
     public String getPwd() {
         return pwd;
     }
-public String getSecurite() {
-        return securite;
-    }
 
-    public void setSecurite(String securite) {
-        this.securite = securite;
-    }
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
@@ -79,13 +74,7 @@ public String getSecurite() {
     }
 
  
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
+  
 
     public String getEmail() {
         return email;
@@ -103,11 +92,19 @@ public String getSecurite() {
         this.login = login;
     }
 
+    public Personne(String login, String pwd, int cin, String nom, String prenom, int age, String email, int telephone, int verification) {
+        this.login = login;
+        this.pwd = pwd;
+        this.cin = cin;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.age = age;
+        this.email = email;
+        this.telephone = telephone;
+        this.verification = verification;
+    }
+
    
 
-    @Override
-    public String toString() {
-        return "Personne{" + "cin=" + cin + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", email=" + email + ", telephone=" + telephone + '}';
-    }
     
 }
