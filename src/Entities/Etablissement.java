@@ -12,8 +12,7 @@ import java.util.ArrayList;
  */
 public class Etablissement {
     protected String lieu;
-    protected int telephone;
-    protected String courrierElectronique;
+    protected int Fax;
     protected String adresse;
     protected Categorie categorie;
     protected Domaine domaine;
@@ -32,21 +31,15 @@ public class Etablissement {
         this.lieu = lieu;
     }
 
-    public int getTelephone() {
-        return telephone;
+    public int getFax() {
+        return Fax;
     }
 
-    public void setTelephone(int telephone) {
-        this.telephone = telephone;
+    public void setFax(int Fax) {
+        this.Fax = Fax;
     }
 
-    public String getCourrierElectronique() {
-        return courrierElectronique;
-    }
 
-    public void setCourrierElectronique(String courrierElectronique) {
-        this.courrierElectronique = courrierElectronique;
-    }
 
     public String getAdresse() {
         return adresse;

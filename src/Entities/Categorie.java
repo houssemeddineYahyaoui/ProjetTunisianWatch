@@ -10,7 +10,9 @@ package Entities;
  */
 public enum Categorie {
      etatique,semiEtatique,prive;
- 
 
+   
+ 
+  
    
 }

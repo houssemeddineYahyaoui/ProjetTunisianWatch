@@ -4,46 +4,35 @@
  */
 package Entities;
 
+import java.sql.Date;
+
+
+
 /**
  *
  * @author A500
  */
 public abstract class Personne {
-    protected String login;
+  
     protected String pwd;
     protected int cin;
     protected String nom;
     protected String prenom;
-    protected int age;
+    protected String dateNaissance;
     protected String email;
     protected int telephone;
      
       public Personne() {
     }
-     
-     
-  public  Personne(String login,String pwd){   
-       this.login=login;
-       this.pwd=pwd;
-   }
 
-    public Personne(String login, String pwd, int cin, String nom, String prenom, int age, String email, int telephone) {
-        this.login = login;
+    public Personne(String pwd, int cin, String nom, String prenom, String dateNaissance, String email, int telephone) {
         this.pwd = pwd;
         this.cin = cin;
         this.nom = nom;
         this.prenom = prenom;
-        this.age = age;
+        this.dateNaissance = dateNaissance;
         this.email = email;
         this.telephone = telephone;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getPwd() {
@@ -78,12 +67,12 @@ public abstract class Personne {
         this.prenom = prenom;
     }
 
-    public int getAge() {
-        return age;
+    public String getDateNaissance() {
+        return dateNaissance;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setDateNaissance(String dateNaissance) {
+        this.dateNaissance = dateNaissance;
     }
 
     public String getEmail() {
@@ -104,8 +93,16 @@ public abstract class Personne {
 
     @Override
     public String toString() {
-        return "Personne{" + "cin=" + cin + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", email=" + email + ", telephone=" + telephone + '}';
+        return "Personne{" + "pwd=" + pwd + ", cin=" + cin + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + dateNaissance + ", email=" + email + ", telephone=" + telephone + '}';
     }
+
+  
+
+    
+
+  
+ 
+    
    
     
 }
